@@ -1,0 +1,27 @@
+# Unity
+/Library/
+/Logs/
+/UserSettings/
+/Temp/
+*.csproj
+*.sln
+*.unitypackage
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Build
+/Build/
+/Builds/
+*.exe
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Misc
+*.log
+.env
