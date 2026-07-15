@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using UnityEngine.UI;
 using TMPro;
+using Unity.Netcode;
 
 public class LobbyManager : MonoBehaviour
 {
@@ -17,13 +17,15 @@ public class LobbyManager : MonoBehaviour
 
     private void SetupHost()
     {
-        startGameButton.SetActive(true);
+        Debug.Log("Host setup - players count: " + NetworkManager.Singleton.ConnectedClientsList.Count);
         playersListText.text = "Waiting for players...";
+        startGameButton.SetActive(true);
     }
 
     private void SetupJoin()
     {
         startGameButton.SetActive(false);
+        Debug.Log("Join setup");
         playersListText.text = "Connected to lobby";
     }
     public void StartGame()
