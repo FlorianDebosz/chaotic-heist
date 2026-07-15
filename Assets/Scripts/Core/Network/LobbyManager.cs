@@ -30,7 +30,10 @@ public class LobbyManager : MonoBehaviour
     }
     public void StartGame()
     {
-        SceneManager.LoadScene("Museum");
+        if (NetworkManager.Singleton.IsHost)
+        {
+            NetworkManager.Singleton.SceneManager.LoadScene("Museum", UnityEngine.SceneManagement.LoadSceneMode.Single);
+        }
     }
 
     public void BackToMainMenu()
