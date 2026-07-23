@@ -8,6 +8,8 @@ public class PlayerController : MonoBehaviour
     private Vector3 moveDirection;
     private Rigidbody rb;
 
+    private string heldKey = "";
+
     void Start()
     {
         rb = GetComponent<Rigidbody>();
@@ -31,5 +33,15 @@ public class PlayerController : MonoBehaviour
             rb.linearVelocity = new Vector3(rb.linearVelocity.x, 0, rb.linearVelocity.z);
             rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
         }
+    }
+    
+    public void AddKey(string keyType)
+    {
+        heldKey = keyType;
+    }
+
+    public bool HasKey(string keyType)
+    {
+        return heldKey == keyType;
     }
 }
