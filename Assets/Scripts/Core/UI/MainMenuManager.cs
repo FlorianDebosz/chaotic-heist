@@ -1,37 +1,18 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using Unity.Netcode;
-public class MainMenuUI : MonoBehaviour
+
+public class MainMenuManager : MonoBehaviour
 {
-    private void Start()
+    public void PlayGame()
     {
-        if (NetworkManager.Singleton == null)
-        {
-            Debug.LogError("NetworkManager not found!");
-        }
+        SceneManager.LoadScene("Museum");
     }
-
-    public void HostGame()
-    {
-        PlayerPrefs.SetString("LobbyMode", "Host");
-        if (NetworkManager.Singleton != null)
-            NetworkManager.Singleton.StartHost();
-        SceneManager.LoadScene("Lobby");
-    }
-
-    public void JoinGame()
-    {
-        PlayerPrefs.SetString("LobbyMode", "Join");
-        if (NetworkManager.Singleton != null)
-            NetworkManager.Singleton.StartClient();
-        SceneManager.LoadScene("Lobby");
-    }
-
+    
     public void Settings()
     {
-        Debug.Log("Settings coming soon...");
+        Debug.Log("Settings soon");
     }
-
+    
     public void ExitGame()
     {
         Application.Quit();

@@ -1,7 +1,6 @@
 using UnityEngine;
-using Unity.Netcode;
 
-public class EscapeZone : NetworkBehaviour
+public class EscapeZone : MonoBehaviour
 {
     private bool objectivePickedUp = false;
     
